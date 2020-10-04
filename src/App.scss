@@ -1,0 +1,23 @@
+.App {
+    font-family: 'Lato', sans-serif;
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 2;
+        background-color: #fff;
+        .logo-container {
+            display: flex;
+            padding: 0 20px; 
+            border-bottom: 1px solid #aaa;
+            height: 80px;
+            img {
+                height: 80px;
+                width: 80px;
+            }
+        }
+    }
+    .card-list-container {
+        margin-top: 80px;
+    }
+}
