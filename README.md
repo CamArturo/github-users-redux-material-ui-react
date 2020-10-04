@@ -1,7 +1,4 @@
-# github-users-redux-material-ui-react
-
-
-# Picky Eater
+# GitHub Users App
 
 ## Synopsis
 
