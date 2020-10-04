@@ -1,8 +1,6 @@
 # GitHub Users App
 
 ## Synopsis
-
-Simple GitHub users app that allows a user to search and retrieve and display user data
 GitHub User Redux is a simple ReactJS app, that uses Material UI and GitHub API to allow the user to display GitHub user data.
 
 ## *Project Goals*
