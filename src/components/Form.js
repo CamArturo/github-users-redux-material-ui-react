@@ -51,7 +51,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Form({onSearchInputChange}) {
+
+function Form({onSearchInputChange, getUser}) {
   const classes = useStyles();
 
   function handleChange(inputValue) {
@@ -73,6 +74,10 @@ function Form({onSearchInputChange}) {
             type="submit"
             className={classes.iconButton}
             aria-label="search"
+            onClick={(event) => {
+                event.preventDefault();
+                getUser()
+            }}
           >
             <SearchIcon />
           </IconButton>
