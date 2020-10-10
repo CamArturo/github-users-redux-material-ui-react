@@ -16,7 +16,7 @@ export default function CardList() {
     <div className="card-list-container">
       <div className={classes.root}>
         <Grid container>
-          <Grid item xs={0} md={2}>
+          <Grid item xs={false} md={2}>
           </Grid>
           <Grid item container xs={12} md={8}>
             <Grid item xs={4}>
@@ -29,7 +29,7 @@ export default function CardList() {
                 <Card></Card>
             </Grid>
           </Grid>
-          <Grid item xs={0} md={2}>
+          <Grid item xs={false} md={2}>
           </Grid>
         </Grid>
       </div>
