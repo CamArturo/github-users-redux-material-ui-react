@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from 'react';
 import { fade, makeStyles } from "@material-ui/core/styles";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Form({onSearchInputChange, getUser}) {
   const classes = useStyles();
+  const userInput = useRef(null);
 
   function handleChange(inputValue) {
     onSearchInputChange(inputValue);
@@ -69,6 +70,10 @@ function Form({onSearchInputChange, getUser}) {
             inputProps={{ "aria-label": "search" }}
             onChange={(event) => { handleChange(event.target.value)}}
             autoFocus={true}
+            type="text" 
+            name="userInput" 
+            id="user-input"
+            inputRef={userInput}
           />
           <IconButton
             type="submit"
@@ -77,6 +82,7 @@ function Form({onSearchInputChange, getUser}) {
             onClick={(event) => {
                 event.preventDefault();
                 getUser()
+                userInput.current.value = "";
             }}
           >
             <SearchIcon />

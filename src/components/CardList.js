@@ -19,16 +19,18 @@ export default function CardList(props) {
         <Grid container>
           <Grid item xs={false} md={2}></Grid>
           <Grid item container xs={12} md={8}>
-            <div className="user-list">
-              {props.users.map((value, index) => (
-                <Card
-                  key={index}
-                  income={value}
-                  index={index}
-                  // removeIncome={removeIncome}
-                />
+          <Grid container>
+              {props.users.map((user, index) => (
+                  <Grid item xs={4}>
+                    <Card
+                      key={index}
+                      user={user}
+                      index={index}
+                      // removeIncome={removeIncome}
+                    />
+                  </Grid>
               ))}
-            </div>
+            </Grid>
           </Grid>
           <Grid item xs={false} md={2}></Grid>
         </Grid>
