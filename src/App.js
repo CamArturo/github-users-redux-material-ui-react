@@ -8,15 +8,16 @@ const axios = require('axios');
 
 function App() {
   const [inputValue, handleSearchInput] = useState('');
-  
-  function handleStatusChange(inputValue) {
-    handleSearchInput(inputValue);
+  let [users, addUser] = useState([]);
+
+  function updateUsers (userData) {
+    addUser([...users, userData])
   }
 
   async function getUser() {
     try {
       const response = await axios.get(`https://api.github.com/users/${inputValue}`);
-      console.log(response.data);
+      updateUsers(response.data)
     } catch (error) {
       console.error(error);
     }
@@ -30,7 +31,8 @@ function App() {
         <Grid item xs={12}>
           <Header onSearchInputChange={handleSearchInput} getUser={getUser}></Header>
         </Grid>
-        <CardList></CardList>
+        
+        <CardList users={users}></CardList>
       </Grid>
     </div>
     </>
